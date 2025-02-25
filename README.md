@@ -21,7 +21,7 @@ The implementation can be used to generate and analyze optimized circuits. Examp
 ```python
 from mcx import MCXLinearDepth, MXCLogDepth
 gate = MCXLogDepth(n, clean=False)
-gate.definition.draw("mpl")
+gate.definition.draw()
 ```
 
 ## References
