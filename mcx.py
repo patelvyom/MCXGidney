@@ -66,7 +66,7 @@ class MCXLinearDepth(Gate):
             if not self.clean:
                 # toggle-detection if dirty ancilla
                 qc.compose(ladder_ops, anc[:] + ctrl[:], inplace=True)
-                qc.ccx(anc, ctrl[0], targ)
+                qc.ccx(anc, ctrl[final_ctrl], targ)
                 qc.compose(ladder_ops.inverse(), anc[:] + ctrl[:], inplace=True)
 
         self.definition = qc
