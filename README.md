@@ -19,7 +19,7 @@ pip install -r requirements.txt
 ## Usage
 The implementation can be used to generate and analyze optimized circuits. Example usage:
 ```python
-from mcx import MCXLinearDepth, MXCLogDepth
+from mcx import MCXLinearDepth, MCXLogDepth
 n = 5
 gate = MCXLogDepth(n, clean=False)
 gate.definition.draw()
