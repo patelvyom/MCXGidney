@@ -1,3 +1,25 @@
+> **ℹ️ Note:** This implementation has been **officially merged into [Qiskit](https://github.com/Qiskit/qiskit)** and **[PennyLane](https://github.com/PennyLaneAI/pennylane)**.
+> - Qiskit: [qiskit PR #13922](https://github.com/Qiskit/qiskit/pull/13922)
+> - PennyLane: [pennylane PR #7028](https://github.com/PennyLaneAI/pennylane/pull/7028)
+
+> **Quick usage:**
+> 
+> **Qiskit**
+```python
+from qiskit import QuantumCircuit, transpile
+
+qc = QuantumCircuit(11)
+qc.mcx(list(range(8)), 8)
+transpile(qc, basis_gates=['u', 'cx']).count_ops()["cx"] # Should be 6*n_ctrl - 6
+```
+> **Pennylane**
+```python
+import pennylane as qml
+
+gate = qml.MultiControlledX(wires=list(range(9)), work_wires=list(range(9, 11)), work_wire_type="clean")
+gate.decomposition()
+```
+
 # Optimised MCX Implementations using Conditionally Clean Ancillae
 
 ## Overview
